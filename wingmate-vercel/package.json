@@ -1,0 +1,28 @@
+{
+  "name": "wingmate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev":        "concurrently \"node dev-server.js\" \"cd client && REACT_APP_API_URL=http://localhost:3001/api npm start\"",
+    "dev:api":    "node dev-server.js",
+    "dev:client": "cd client && npm start",
+    "build":      "cd client && npm install && npm run build",
+    "db:migrate": "node api/_lib/migrate.js",
+    "db:seed":    "node api/_lib/seed.js",
+    "deploy":     "vercel --prod"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk":  "^0.24.0",
+    "bcryptjs":           "^2.4.3",
+    "pg":                 "^8.12.0",
+    "pusher":             "^5.2.0",
+    "jsonwebtoken":       "^9.0.2",
+    "uuid":               "^10.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "express":      "^4.19.2",
+    "dotenv":       "^16.4.5",
+    "vercel":       "^37.0.0"
+  }
+}
